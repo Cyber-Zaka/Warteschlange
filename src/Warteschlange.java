@@ -1,8 +1,10 @@
 public class Warteschlange {
     private Person erster;
     private Person letzter;
+    //private Warteschlange drivein;
 
     Warteschlange(){
+       // drivein = new Warteschlange;
         erster = null;
 
     }
@@ -11,7 +13,11 @@ public class Warteschlange {
      * Lässt das Objekt die Schlange verlassen
      */
     void verlassen(){
-
+        Person hilfe;
+        hilfe= erster;
+        erster= hilfe.getNachfolger();
+        hilfe.setNachfolger(null);
+        hilfe= null;
     }
 
     /**
@@ -26,8 +32,15 @@ public class Warteschlange {
      * fügt eine Person der schlange hinzu
      * @param pPerson
      */
-    void hintenanstellen(Person pPerson){
-
+    void hintenanstellen(Person pPerson)
+    {
+        if(IstLeer()){
+            setErster(pPerson);
+            setLetzter(pPerson);
+        } else  {
+            letzter.setNachfolger(pPerson);
+            setLetzter(pPerson);
+        }
     }
 
     /**
@@ -35,7 +48,10 @@ public class Warteschlange {
      * @return
      */
     boolean IstLeer(){
-        return true;
+        if (erster==null){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -53,9 +69,19 @@ public class Warteschlange {
     public void setLetzter(Person pP) {
         this.letzter = pP;
     }
+
+    /**
+     * gibt den Ersten zurück
+     * @return erster
+     */
     Person getErster(){
         return erster;
     }
+
+    /**
+     * gibt den letzten zurück
+     * @return letzter
+     */
     Person getLetzter(){
         return letzter;
     }
