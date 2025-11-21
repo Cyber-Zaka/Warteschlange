@@ -14,7 +14,7 @@ public class Knoten <ContentType>{
      * gibt den nächsten Knoten zurück
      * @return next
      */
-    Knoten getnext(){return next;}
+    Knoten getNext(){return next;}
 
     /**
      * gibt die Art der zu verwaltenden Objekte raus
