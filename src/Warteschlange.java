@@ -3,6 +3,9 @@ public class Warteschlange {
     private Person letzter;
     //private Warteschlange drivein;
 
+    /**
+     * Konstruktor der Klasse Warteschlange
+     */
     Warteschlange(){
        // drivein = new Warteschlange;
         erster = null;
@@ -10,7 +13,7 @@ public class Warteschlange {
     }
 
     /**
-     * Lässt das Objekt die Schlange verlassen
+     * Lässt das Objekt die Datenstruktur verlassen
      */
     void verlassen(){
         Person hilfe;
@@ -21,7 +24,7 @@ public class Warteschlange {
     }
 
     /**
-     * gibt den Ersten in der Schlange raus
+     * gibt den Ersten in der Datenstruktur raus
      * @return
      */
     Person getErstePersonInSchlange(){
@@ -29,7 +32,7 @@ public class Warteschlange {
     }
 
     /**
-     * fügt eine Person der schlange hinzu
+     * fügt eine Person der Datenstruktur hinzu
      * @param pPerson
      */
     void hintenanstellen(Person pPerson)
@@ -44,7 +47,7 @@ public class Warteschlange {
     }
 
     /**
-     * überprüft ob die Schlange leer ist
+     * überprüft ob die Datenstruktur leer ist
      * @return
      */
     boolean IstLeer(){
@@ -55,7 +58,7 @@ public class Warteschlange {
     }
 
     /**
-     * Speichert die Person im ersten Platz der schlange
+     * Speichert die Person im ersten Platz der Datenstruktur
      * @param pP
      */
     void setErster(Person pP){
@@ -63,7 +66,7 @@ public class Warteschlange {
     }
 
     /**
-     * Speichert die Person im letzten Platz der schlange
+     * Speichert die Person im letzten Platz der Datenstruktur
      * @param pP
      */
     public void setLetzter(Person pP) {
