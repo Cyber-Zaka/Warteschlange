@@ -4,8 +4,9 @@ public class Person {
     Person Nachfolger;
 
 
-    Person(){
-
+    Person(String pn, String vn){
+    setName(pn);
+    setVorname(vn);
     }
 
 

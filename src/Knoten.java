@@ -20,7 +20,7 @@ public class Knoten <ContentType>{
      * gibt die Art der zu verwaltenden Objekte raus
      * @return content
      */
-    ContentType getContent(){
+    public ContentType getContent(){
         return content;
     }
 
@@ -28,7 +28,7 @@ public class Knoten <ContentType>{
      * fügt eine Objekt der Datenstruktur hinzu
      * @param pNext
      */
-    void setNext(Knoten pNext)
+    public void setNext(Knoten pNext)
     {
         next = pNext;
     }

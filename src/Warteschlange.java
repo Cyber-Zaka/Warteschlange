@@ -32,6 +32,16 @@ public class Warteschlange {
     }
 
     /**
+     * Gibt die Datenstruktur aus
+     */
+    void ausgeben(){
+        Person Help= erster;
+        while((Help.getNachfolger() == null) == false){
+            System.out.println(Help);
+            Help= Help.getNachfolger();
+        }
+    }
+    /**
      * fügt eine Person der Datenstruktur hinzu
      * @param pPerson
      */
