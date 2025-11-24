@@ -1,5 +1,4 @@
 public class WSK {
-
     private Knoten<Person> erster;
     private Knoten<Person> letzter;
 
