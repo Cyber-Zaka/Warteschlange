@@ -1,6 +1,6 @@
-public class WSK {
-    private Knoten<Person> erster;
-    private Knoten<Person> letzter;
+public class WSK <ContentType>{
+    private Knoten<ContentType> erster;
+    private Knoten<ContentType> letzter;
 
     /**
      * Konstruktor der Klasse Warteschlange
@@ -11,12 +11,22 @@ public class WSK {
     }
 
     /**
+     * Gibt die Datenstruktur aus
+     */
+    void ausgeben(){
+        Knoten Help= erster;
+        do{
+            System.out.println(Help.getContent().getFullname());
+            Help= Help.getNachfolger();
+        }while(!(Help == null));
+    }
+    /**
      * Lässt das Objekt die Datenstruktur verlassen
      */
     void verlassen() {
         if (erster == null) return;
 
-        Knoten<Person> hilfe = erster;
+        Knoten<ContentType> hilfe = erster;
         erster = hilfe.getNext();
         hilfe.setNext(null);
 
@@ -30,7 +40,7 @@ public class WSK {
      * gibt den Ersten in der Datenstruktur raus
      * @return
      */
-    Person getErstePersonInSchlange() {
+    ContentType getErstePersonInSchlange() {
         if (erster == null) return null;
         return erster.getContent();
     }
@@ -39,8 +49,8 @@ public class WSK {
      * fügt eine Person der Datenstruktur hinzu
      * @param pPerson
      */
-    void hintenanstellen(Person pPerson) {
-        Knoten<Person> neuerKnoten = new Knoten<>(pPerson);
+    void hintenanstellen(ContentType pPerson) {
+        Knoten<ContentType> neuerKnoten = new Knoten<>(pPerson);
 
         if (IstLeer()) {
             erster = neuerKnoten;
@@ -63,7 +73,7 @@ public class WSK {
      * Speichert die Person im ersten Platz der Datenstruktur
      * @param pK
      */
-    void setErster(Knoten<Person> pK) {
+    void setErster(Knoten<ContentType> pK) {
         erster = pK;
     }
 
@@ -71,7 +81,7 @@ public class WSK {
      * Speichert die Person im letzten Platz der Datenstruktur
      * @param pK
      */
-    public void setLetzter(Knoten<Person> pK) {
+    public void setLetzter(Knoten<ContentType> pK) {
         letzter = pK;
     }
 
@@ -79,7 +89,7 @@ public class WSK {
      * gibt den Ersten zurück
      * @return erster
      */
-    Knoten<Person> getErster() {
+    Knoten<ContentType> getErster() {
         return erster;
     }
 
@@ -87,7 +97,7 @@ public class WSK {
      * gibt den letzten zurück
      * @return letzter
      */
-    Knoten<Person> getLetzter() {
+    Knoten<ContentType> getLetzter() {
         return letzter;
     }
 }

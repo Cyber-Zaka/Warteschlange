@@ -1,6 +1,6 @@
 public class Warteschlange {
-    private Person erster;
-    private Person letzter;
+    private ContentType erster;
+    private ContentType letzter;
     //private Warteschlange drivein;
 
     /**
@@ -16,7 +16,7 @@ public class Warteschlange {
      * Lässt das Objekt die Datenstruktur verlassen
      */
     void verlassen(){
-        Person hilfe;
+        ContentType hilfe;
         hilfe= erster;
         erster= hilfe.getNachfolger();
         hilfe.setNachfolger(null);
@@ -27,7 +27,7 @@ public class Warteschlange {
      * gibt den Ersten in der Datenstruktur raus
      * @return
      */
-    Person getErstePersonInSchlange(){
+    ContentType getErstePersonInSchlange(){
         return erster;
     }
 
@@ -35,17 +35,17 @@ public class Warteschlange {
      * Gibt die Datenstruktur aus
      */
     void ausgeben(){
-        Person Help= erster;
-        while((Help.getNachfolger() == null) == false){
-            System.out.println(Help);
+        ContentType Help= erster;
+        do{
+            System.out.println(Help.getFullName());
             Help= Help.getNachfolger();
-        }
+        }while(!(Help == null));
     }
     /**
      * fügt eine Person der Datenstruktur hinzu
      * @param pPerson
      */
-    void hintenanstellen(Person pPerson)
+    void hintenanstellen(ContentType pPerson)
     {
         if(IstLeer()){
             setErster(pPerson);
@@ -71,7 +71,7 @@ public class Warteschlange {
      * Speichert die Person im ersten Platz der Datenstruktur
      * @param pP
      */
-    void setErster(Person pP){
+    void setErster(ContentType pP){
         this.erster=pP;
     }
 
@@ -79,7 +79,7 @@ public class Warteschlange {
      * Speichert die Person im letzten Platz der Datenstruktur
      * @param pP
      */
-    public void setLetzter(Person pP) {
+    public void setLetzter(ContentType pP) {
         this.letzter = pP;
     }
 
@@ -87,7 +87,7 @@ public class Warteschlange {
      * gibt den Ersten zurück
      * @return erster
      */
-    Person getErster(){
+    ContentType getErster(){
         return erster;
     }
 
@@ -95,7 +95,7 @@ public class Warteschlange {
      * gibt den letzten zurück
      * @return letzter
      */
-    Person getLetzter(){
+    ContentType getLetzter(){
         return letzter;
     }
 

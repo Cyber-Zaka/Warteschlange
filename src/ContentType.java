@@ -1,10 +1,10 @@
-public class Person {
+public class ContentType {
     String name;
     String vorname;
-    Person Nachfolger;
+    ContentType Nachfolger;
 
 
-    Person(String pn, String vn){
+    ContentType(String pn, String vn){
     setName(pn);
     setVorname(vn);
     }
@@ -34,7 +34,7 @@ public class Person {
      * @param pPerson
      *
      */
-    void setNachfolger(Person pPerson){Nachfolger=pPerson;}
+    void setNachfolger(ContentType pPerson){Nachfolger=pPerson;}
 
     /**
      * Gibt den Namen zurück
@@ -42,6 +42,11 @@ public class Person {
      */
     String getName(){return name;}
 
+    /**
+     * Gibt Vollen Namen zurück
+     * @return VN
+     */
+    String getFullName(){String VN= vorname+" "+ name;return VN;}
     /**
      * Gibt den Vornamen zurück
      * @return
@@ -51,5 +56,5 @@ public class Person {
      * Gibt den Nachfolger zurück
      * @return
      */
-    Person getNachfolger(){return Nachfolger;}
+    ContentType getNachfolger(){return Nachfolger;}
 }
