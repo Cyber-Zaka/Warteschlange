@@ -16,8 +16,8 @@ public class WSK <ContentType>{
     void ausgeben(){
         Knoten Help= erster;
         do{
-            System.out.println(Help.getContent().getFullname());
-            Help= Help.getNachfolger();
+            System.out.println(Help.getContent().getClass());
+            Help= Help.getClass();
         }while(!(Help == null));
     }
     /**
