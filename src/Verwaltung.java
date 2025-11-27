@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Verwaltung {
     private Warteschlange warteschlange;
     private WSK<Person> wsk;
-
+    private Stack<Person> stack;
     /**
      * Main Methode zur Erschaffung des Verwaltungsobjekts
      */
@@ -17,6 +17,7 @@ public class Verwaltung {
         Scanner scanner = new Scanner(System.in);
         this.warteschlange = new Warteschlange();
         this.wsk = new WSK();
+        this.stack = new Stack();
         while (true) {
             System.out.println("Lineare Datenstruktur wählen: ");
             System.out.println("[0] Break");
@@ -96,6 +97,42 @@ public class Verwaltung {
                                 System.out.println("Die Person hat die Schlange verlassen.");
                             } else if (help2 == 3) {
                                 this.wsk.ausgeben();
+                            }
+                        }
+                    }
+                }
+            }
+            else if (help == 3) {
+                while (true) {
+                    System.out.println("Zu verwaltenden Objekttypen wählen: ");
+                    System.out.println("[0] Break");
+                    System.out.println("[1] Personen");
+                    int help1 = scanner.nextInt();
+                    scanner.nextLine();
+                    if (help1 == 0) {
+                        break;
+                    } else if (help1 == 1) {
+                        while (true) {
+                            System.out.println("Aktion waehlen:");
+                            System.out.println("[0] Break");
+                            System.out.println("[1] Person hinzufuegen");
+                            System.out.println("[2] Person entfernen");
+                            System.out.println("[3] Datenstruktur ausgeben");
+                            int help2 = scanner.nextInt();
+                            scanner.nextLine();
+                            if (help2 == 0) {
+                                break;
+                            } else if (help2 == 1) {
+                                System.out.println("Namen der Person angeben: ");
+                                String name = scanner.nextLine();
+                                System.out.println("Voramen der Person angeben: ");
+                                String vn = scanner.nextLine();
+                                this.stack.push(new Person (name, vn));
+                            } else if (help2 == 2) {
+                                this.stack.pop();
+                                System.out.println("Die Person hat die Schlange verlassen.");
+                            } else if (help2 == 3) {
+                                this.stack.ausgeben();
                             }
                         }
                     }

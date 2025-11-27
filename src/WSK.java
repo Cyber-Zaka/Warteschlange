@@ -16,8 +16,9 @@ public class WSK <ContentType>{
     void ausgeben(){
         Knoten Help= erster;
         do{
-            if(Help.getContent() instanceof Person)
-            System.out.println(((Person)Help.getContent()).getVN());
+            if(Help.getContent() instanceof Person) {
+                System.out.println(((Person)Help.getContent()).getVN());
+            }
             Help= Help.getNext();
         }while(!(Help == null));
     }

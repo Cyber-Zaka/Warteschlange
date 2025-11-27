@@ -1,4 +1,4 @@
-public class Stack {
+public class Stack<ContentType> {
     private Knoten<ContentType> head;
 
 
@@ -48,12 +48,13 @@ public class Stack {
      * @param pPerson
      */
     void push(ContentType pPerson) {
-        Knoten<ContentType> neuerKnoten = new Knoten<>(pPerson);
-        neuerKnoten.setNext(head.getNext());
-
+        Knoten<ContentType> neuerKnoten = new Knoten<ContentType>(pPerson);
+        if(IstLeer()) {
+        head = neuerKnoten;
+        }else{
+            neuerKnoten.setNext(head);
             head = neuerKnoten;
-
-
+        }
     }
 
     /**
