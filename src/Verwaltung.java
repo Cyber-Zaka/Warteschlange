@@ -90,12 +90,12 @@ public class Verwaltung {
                                 String name = scanner.nextLine();
                                 System.out.println("Voramen der Person angeben: ");
                                 String vn = scanner.nextLine();
-                                this.warteschlange.hintenanstellen(new ContentType(name, vn));
+                                this.wsk.hintenanstellen(new Person (name, vn));
                             } else if (help2 == 2) {
-                                this.warteschlange.verlassen();
+                                this.wsk.verlassen();
                                 System.out.println("Die Person hat die Schlange verlassen.");
                             } else if (help2 == 3) {
-                                this.warteschlange.ausgeben();
+                                this.wsk.ausgeben();
                             }
                         }
                     }

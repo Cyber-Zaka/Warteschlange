@@ -11,13 +11,14 @@ public class WSK <ContentType>{
     }
 
     /**
-     * Gibt die Datenstruktur aus
+     * Gibt die Datenstruktur aus. ALARM 3TER ZEIGER (LIST)
      */
     void ausgeben(){
         Knoten Help= erster;
         do{
-            System.out.println(Help.getContent().getClass());
-            Help= Help.getClass();
+            if(Help.getContent() instanceof Person)
+            System.out.println(((Person)Help.getContent()).getVN());
+            Help= Help.getNext();
         }while(!(Help == null));
     }
     /**

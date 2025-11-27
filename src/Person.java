@@ -5,6 +5,7 @@ public class Person {
     String vorname;
 
     Person Nachfolger;
+    String VN;
 
 
 
@@ -19,12 +20,7 @@ public class Person {
 
         Person(String pn, String vn){
 
-
-            setName(pn);
-
-
-            setVorname(vn);
-
+            setVN(pn, vn);
         }
 
 
@@ -67,7 +63,7 @@ public class Person {
 
          */
 
-        void setVN(String pn, String pv){name=pn; vorname=pv;}
+        void setVN(String pn, String pv){name=pn; vorname=pv; VN=vorname + " "+ name;}
 
         /**
 
@@ -103,6 +99,14 @@ public class Person {
 
          */
         String getVorname(){return vorname;}
+    /**
+
+     * Gibt den Volen Namen zurück
+
+     * @return
+
+     */
+    String getVN(){return VN;}
 
     /**
 
