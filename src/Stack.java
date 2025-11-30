@@ -58,7 +58,7 @@ public class Stack<ContentType> {
     }
 
     /**
-     * überprüft ob die Datenstruktur leer ist
+     * überprüft, ob die Datenstruktur leer ist
      * @return
      */
     boolean IstLeer() {

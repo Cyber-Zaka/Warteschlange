@@ -59,7 +59,11 @@ public class List<ContentType> {
      */
     public void next(){
         if(isEmpty()==false) {
-            current = current.getNext();
+            if(!(current==last)) {
+                current = current.getNext();
+            }else{
+                current = null;
+            }
         }
     }
 
@@ -98,14 +102,33 @@ public class List<ContentType> {
 
     /**
      * Falls es ein aktuelles Objekt gibt (hasAccess() == true),
-     * wird das aktuelle Objekt ge- löscht und das Objekt hinter dem gelöschten
+     * wird das aktuelle Objekt gelöscht und das Objekt hinter dem gelöschten
      * Objekt wird zum aktuellen Objekt. Wird das Objekt, das am Ende der Liste steht,
      * gelöscht, gibt es kein aktuelles Objekt mehr (hasAccess() == false).
      * Wenn die Liste leer ist oder es kein aktuelles Objekt gibt (hasAccess() == false),
      * bleibt die Liste unverändert.
      */
     public void remove(){
-
+        if(hasAccess() && !isEmpty()){
+            Knoten<ContentType> help = current;
+            current = first;
+            while (! (help==current.getNext())){
+                current = current.getNext();
+            }
+            current.setNext(help.getNext());
+            help.setNext(null);
+            help=null;
+            if(current == last){
+                help = current;
+                current = first;
+                while (! (help==current.getNext())){
+                    current = current.getNext();
+                }
+                last = current;
+                help=null;
+                current= null;
+            }
+        }
     }
 
     /**
@@ -117,13 +140,28 @@ public class List<ContentType> {
      * @param pList
      */
     public void concat(List<ContentType> pList){
+        Knoten<ContentType> help = last;
+        Knoten<ContentType> help1 = pList.first;
+        while(!(help.getNext()==null)) {
+            help.setNext(help1);
+            help= help.getNext();
+            help1 = help1.getNext();
+        }
+        last = help;
+        pList= null;
 
     }
     /**
-     * Gibt den Content zurück
+     * Falls es ein aktuelles Objekt gibt (hasAccess() == true),
+     * wird das aktuelle Objekt zurückgegeben.
+     * Andernfalls (hasAccess() == false) gibt die Anfrage den Wert null zurück.
      * @return
      */
-    public ContentType getContent(){
-        return getContent();
+    public ContentType getContent() {
+        if (hasAccess() == true) {
+            return current.getContent();
+        } else {
+            return null;
+        }
     }
 }
