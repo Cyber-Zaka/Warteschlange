@@ -25,7 +25,7 @@ public class Knoten <ContentType>{
     }
 
     /**
-     * fügt eine Objekt der Datenstruktur hinzu
+     * fügt ein Objekt der Datenstruktur hinzu
      * @param pNext
      */
     public void setNext(Knoten pNext)
