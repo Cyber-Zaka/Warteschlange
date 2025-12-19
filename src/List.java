@@ -78,7 +78,21 @@ public class List<ContentType> {
      * @param pContent
      */
     public void insert(ContentType pContent){
-
+        Knoten<ContentType> newNode = new Knoten<>(pContent);
+        if (isEmpty()) {
+            first = current = newNode;
+        } else if (current == first) {
+            newNode.setNext(first);
+            first = newNode;
+        } else if (current != null) {
+            // finde den vorherigen Knoten
+            Knoten<ContentType> prev = first;
+            while (prev.getNext() != current) {
+                prev = prev.getNext();
+            }
+            newNode.setNext(current);
+            prev.setNext(newNode);
+        }
     }
 
     /**
