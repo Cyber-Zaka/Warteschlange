@@ -32,7 +32,7 @@ public class List<ContentType> {
 
     /**
      *Falls die Liste nicht leer ist, wird das
-     *erste Objekt der Liste aktuelles Objekt. Ist die Liste leer, geschieht nichts.
+     *erste Objekt  der Liste aktuelles Objekt. Ist die Liste leer, geschieht nichts.
      */
     public void toFirst(){
         if(isEmpty()==false){
